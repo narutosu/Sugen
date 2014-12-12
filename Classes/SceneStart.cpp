@@ -1,5 +1,5 @@
 #include "SceneStart.h"
-
+#include "SceneGame.h"
 
 CCScene* SceneStart::scene()
 {
@@ -81,6 +81,7 @@ void SceneStart::update(float)
 	if (_black->getPositionX() - _red->getPositionX() <= 2 * stone_r)
 	{
 		log("Stone was boom,了解contentsize跟boundingbox的差别");
-		Director::getInstance()->pause();
+		Scene* Sc = SceneGame::scene();
+		Director::getInstance()->replaceScene(Sc);
 	}
 }
